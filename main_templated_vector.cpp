@@ -1,26 +1,26 @@
-/* 
-
-	Use this main function to test your vector class
- 	uncomment out these lines as you complete the appropriate functions
-
-*/
-
 #include <iostream>
-#include <cstdlib>
+#include <assert.h>
 #include "TemplatedVector.h"
+
 using namespace std;
+
+void baseReqTests(TemplatedVector<int>&);
+void intermediateReqTests(TemplatedVector<int>&);
+void advancedReqTests(TemplatedVector<int>&);
 
 int main() {
 	TemplatedVector<int> templatedVector;
 
 	/* THESE ARE TESTS TO SEE IF THE BASE REQUIREMENTS ARE MET */
-	baseReqCheck(templatedVector);
+	//baseReqTests(templatedVector);
 
 	/* THESE ARE TESTS TO SEE IF THE INTERMEDIATE LEVEL REQUIREMENTS ARE MET */
-	intermediateRequirementsCheck(templatedVector);
+	//intermediateReqTests(templatedVector);
 	
 	/* THESE ARE TESTS TO SEE IF THE ADVANCED LEVEL REQUIREMENTS MET */
-	advancedReqCheck(templatedVector);
+	//advancedReqTests(templatedVector);
+
+	cout << "All your tests have passed!\n";
 
 	return 0;
 }
@@ -48,11 +48,16 @@ void baseReqTests(TemplatedVector<int>& templatedVector) {
 
 	// Let's pop something
 	assert(templatedVector.pop_back() == 19);
-	assert(templatedVector.size() == 19))
-	assert(templatedVector.at(19) == -1)
-
-		// Let's pop everything
-		int old = 19;
+	assert(templatedVector.size() == 19);
+	try {
+		templatedVector.at(19);
+	}
+	catch (int e) {
+		assert(true);
+	}
+	
+	// Let's pop everything
+	int old = 19;
 	while (!templatedVector.empty()) {
 		int temp = templatedVector.pop_back();
 		assert(temp == old - 1);

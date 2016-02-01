@@ -1,21 +1,26 @@
-// Use this main function to test your vector class
-// uncomment out these lines as you complete the appropriate functions
 #include <iostream>
-#include <cstdlib>
+#include <assert.h>
 #include "IntVector.h"
+
 using namespace std;
+
+void baseReqTests(IntVector&);
+void intermediateReqTests(IntVector&);
+void advancedReqTests(IntVector&);
 
 int main() {
 	IntVector intVector;
 
 	/* THESE ARE TESTS TO SEE IF THE BASE REQUIREMENTS ARE MET */
-	baseReqTests(intVector);
+	//baseReqTests(intVector);
 
 	/* THESE ARE TESTS TO SEE IF THE INTERMEDIATE LEVEL REQUIREMENTS ARE MET */
-	intermediateReqTests(intVector);
+	//intermediateReqTests(intVector);
 	
 	/* THESE ARE TESTS TO SEE IF THE ADVANCED LEVEL REQUIREMENTS MET */
-	advancedReqTests(intVector);
+	//advancedReqTests(intVector);
+
+	cout << "All your tests have passed!\n";
 
 	return 0;
 }
@@ -43,8 +48,13 @@ void baseReqTests(IntVector& intVector) {
 
 	// Let's pop something
 	assert(intVector.pop_back() == 19);
-	assert(intVector.size() == 19))
-	assert(intVector.at(19) == -1)
+	assert(intVector.size() == 19);
+	try {
+		intVector.at(19);
+	}
+	catch (int e) {
+		assert(true);
+	}
 
 	// Let's pop everything
 	int old = 19;
