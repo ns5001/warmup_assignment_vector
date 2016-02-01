@@ -13,7 +13,7 @@ OBJECTS = $(SOURCES:.cpp=.o)
 all: $(EXECUTABLE_NAME)
 
 $(EXECUTABLE_NAME): $(OBJECTS) 
-	$(CC) $(CFLAGS) -o $(EXECUTABLE_NAME) $(OBJECTS)
+	$(CC) -o $(EXECUTABLE_NAME) $(OBJECTS)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $(LFLAGS) $< -o $@
