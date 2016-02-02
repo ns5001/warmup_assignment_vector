@@ -7,8 +7,8 @@ Be sure to remove all non-relevant files from your repository before submitting 
 
 To be able to run your program, open and edit the makefile (in a non-RTF text editing program, such as Sublime Text) and provide the appropriate sources to compile along with the executable name. Then run:
 
-```make all```
+``` make all ```
 
 If there are any errors, fix them in your source code, and rerun the make command. Repeat until there are no errors. Then you can run your program:
 
-```./executable_name```
+``` ./executable_name ```
